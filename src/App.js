@@ -1,7 +1,18 @@
+import {BrowserRouter} from 'react-router-dom'
+import NavBar from './componets/layout/NavBar'
 
 function App() {
   return (
-  <h1>Malik Plan</h1>
+
+    <BrowserRouter>
+        <div className="App">
+      <NavBar />
+      <Switch>
+
+        {/* Create the routes for each component */}
+      </Switch>
+        </div>
+  </BrowserRouter>
   );
 }
 
