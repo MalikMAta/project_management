@@ -4,7 +4,9 @@ import NavBar from "./componets/layout/NavBar";
 import DashBoard from "./componets/dashboard/Dashboard";
 import ProjectDetals from './componets/projects/ProjectDetails'
 import ProjectDetails from "./componets/projects/ProjectDetails";
-import Signin, { SignIn } from './componets/auth/SignIn';
+import SignIn from './componets/auth/SignIn';
+import SignUp from './componets/auth/SignUp'
+import Create from './componets/projects/CreateProject'
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
           <Route exact path="/" component={Dashboard} />
           <Route path ="/project/:id" component={ProjectDetails} />
           <Route path = "/signin" component={SignIn} />
+          <Route path ="/signup" component={SignUp} />
+          <Route path ="/create" component={Create}/>
+          
         </Switch>
       </div>
     </BrowserRouter>
