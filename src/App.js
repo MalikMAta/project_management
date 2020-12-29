@@ -18,7 +18,7 @@ function App() {
 
           {/* Add the "path" so when the user goes to another route "/" does not get routed also */}
 
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/" component={DashBoard} />
           <Route path ="/project/:id" component={ProjectDetails} />
           <Route path = "/signin" component={SignIn} />
           <Route path ="/signup" component={SignUp} />
