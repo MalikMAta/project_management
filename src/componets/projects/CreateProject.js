@@ -25,7 +25,7 @@ function CreateProject(props) {
         setContent("")
         props.createProject(newPost)
 
-    }else{ 
+     }else{ 
         alert('error')
     }
     

@@ -1,8 +1,8 @@
 import firebase from 'firebase'
-import 'firebase/firestone'
-import 'firebase/auth'
+// import 'firebase/firestone'
+// import 'firebase/auth'
 
-export const config = {
+ const config = {
     apiKey: "AIzaSyDKNJtDBbLadsI1m156Z0WZRZVeoNZbvas",
     authDomain: "project-managment-400bc.firebaseapp.com",
     projectId: "project-managment-400bc",
@@ -14,3 +14,6 @@ export const config = {
 
   firebase.initializeApp(config)
   firebase.firestore().settings({timestampInSnapshots: true})
+
+
+  export default config
