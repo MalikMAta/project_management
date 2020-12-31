@@ -2,16 +2,24 @@ import React, { Component, useState } from "react";
 import {connect} from 'react-redux'
 import {createProject} from '../../store/actions/projectActions'
 
-function CreateProject(props) {
+function CreateProject() {
 
     
-
+    
+  const {createProject} = this.props
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
  
 
   const [newPost, setNewPost] = useState([])
 
+
+  const handleInputChange = e => {
+
+    var {name, value} = e.target
+   
+  }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -20,11 +28,13 @@ function CreateProject(props) {
         
         setNewPost((post) =>{
             return[...post, posts]
+            console.log(newPost)
         })
         setTitle("")
         setContent("")
-        props.createProject(newPost)
 
+       createProject(newPost)
+       
     }else{ 
         alert('error')
     }
@@ -77,10 +87,3 @@ const matchDispatchToProps = (dispatch) => {
 }
 
 export default connect(null, matchDispatchToProps)(CreateProject);
-
-
-
-
-
-
-

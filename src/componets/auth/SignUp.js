@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 
 function SignUp() {
 
@@ -10,11 +10,7 @@ function SignUp() {
   const [newUser, setNewUser] = useState([])
 
 
-  const handleInputChange = e => {
-
-    var {name, value} = e.target
-   
-  }
+ 
   
   const handleSubmit = (e) => {
     e.preventDefault();
