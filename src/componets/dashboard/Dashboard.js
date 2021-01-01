@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
+import {firebaseConnect, firestoreConnect} from  'react-redux-firebase'
+import {compose} from 'redux'
+
 // connect is a function to take a higher order component 
 import {connect} from 'react-redux'
 
@@ -33,4 +36,9 @@ const mapStateToProps = (state) => {
     projects: state.project.projects
   }
 }
-export default connect(mapStateToProps)(Dashboard)
+export default compose(
+  connect(mapStateToProps),
+  firebaseConnect([
+    { collection: 'projects' }
+  ])
+)(Dashboard)

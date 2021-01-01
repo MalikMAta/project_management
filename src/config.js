@@ -1,6 +1,6 @@
-import firebase from 'firebase'
-// import 'firebase/firestone'
-// import 'firebase/auth'
+import firebase from 'firebase/app'
+import 'firebase/firestore' // <- needed if using firestore
+import 'firebase/auth'
 
  const config = {
     apiKey: "AIzaSyDKNJtDBbLadsI1m156Z0WZRZVeoNZbvas",
@@ -16,4 +16,4 @@ import firebase from 'firebase'
   firebase.firestore().settings({timestampInSnapshots: true})
 
 
-  export default config
+  export default firebase

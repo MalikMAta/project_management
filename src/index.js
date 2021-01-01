@@ -7,17 +7,9 @@ import rootReducer from "./store/reducers/rootReducer";
 
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import {
-  reduxFirestore,
-  getFirestore,
-  createFirebaseInstance,
-} from "redux-firestore";
-import {
-  reactReduxFirebase,
-  getFirebase,
-  ReactReuxFirebaseProivider,
-} from "react-redux-firebase";
-import fbConfig from "./config";
+import {createFirebaseInstance} from "redux-firestore";
+import { getFirebase, ReactReduxFirebaseProvider} from "react-redux-firebase";
+import firebase from "./config";
 
 // const store = createStore(rootReducer,
 //   compose(
@@ -31,21 +23,23 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(thunk.withExtraArgument({ getFirebase })))
+  composeEnhancers(applyMiddleware(thunk.withExtraArgument({ getFirebase  })))
 );
 
 const rrFProps = {
-  fbConfig,
+  firebase,
   config: {},
   dispatch: store.dispatch,
   createFirebaseInstance,
 };
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ReactReduxFirebaseProvider {...rrfProps}>
-      <App />
-    </ReactReduxFirebaseProvider>
-  </Provider>,
+  <>
+   <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrFProps}>
+        <App />
+      </ReactReduxFirebaseProvider>
+    </Provider>
+  </>,
   document.getElementById("root")
 );
