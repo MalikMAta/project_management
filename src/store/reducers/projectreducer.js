@@ -1,13 +1,6 @@
 // Since there is no state to begin with, add initState
 
-const initState = {
-    projects: [
-      {id: '1', title: 'help me find peach', content: 'blah blah blah'},
-      {id: '2', title: 'collect all the stars', content: 'blah blah blah'},
-      {id: '3', title: 'egg hunt with yoshi', content: 'blah blah blah'}
-    ]
-  }
-const projectReducer = (state = initState, action) => {
+const projectReducer = (state = {}, action) => {
   
     switch (action.type){
       case 'CREATE_PROJECT':
@@ -15,6 +8,7 @@ const projectReducer = (state = initState, action) => {
         return state;
       case 'CREATE_PROJECT_ERROR':
         console.log("Creat project error")
+      break
       default:
         return state;
     }

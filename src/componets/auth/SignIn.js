@@ -17,7 +17,6 @@ function SignIn() {
         
         setUser((people) =>{
             return[...people, users]
-            console.log(users)
         })
         setEmail("")
         setPassword("")

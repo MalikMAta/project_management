@@ -13,7 +13,7 @@ import 'firebase/auth'
   }; 
 
   firebase.initializeApp(config)
-  firebase.firestore().settings({timestampInSnapshots: true})
+  firebase.firestore()
 
 
   export default firebase

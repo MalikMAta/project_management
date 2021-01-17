@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, {  useState } from "react";
 import {connect} from 'react-redux'
 import {createProject} from '../../store/actions/projectActions'
 
@@ -24,6 +24,7 @@ function CreateProject(props) {
         setTitle("")
         setContent("")
         props.createProject(newPost)
+        setNewPost("")
 
      }else{ 
         alert('error')
