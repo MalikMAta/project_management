@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
-import { firestoreConnect, useFirebaseConnect} from  'react-redux-firebase'
+import { firestoreConnect} from  'react-redux-firebase'
 // connect is a function to take a higher order component 
 import {connect} from 'react-redux'
 import {compose} from 'redux'

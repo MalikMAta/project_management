@@ -20,8 +20,9 @@ function SignUp() {
         
         setNewUser((people) =>{
             return[...people, users]
-            console.log(newUser)
+            
         })
+        console.log(newUser)
         setEmail("")
         setPassword("")
         setFirstName("")
