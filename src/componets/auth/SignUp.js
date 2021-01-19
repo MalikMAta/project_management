@@ -81,9 +81,11 @@ function SignUp(props) {
 
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">SignUp</button>
-            <div className="red-text center">
-              {authError ? console.log(authError) : null}
+            <div className="center red-text">
+              {authError ? <p>{authError}</p> : null}
             </div>
+            
+
           </div>
         </form>
       </div>
