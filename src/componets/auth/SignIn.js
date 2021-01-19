@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authActions";
+import {Redirect} from 'react-router-dom'
+
 
 function SignIn(props) {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const {authError, auth} = props
+
+
+  // // Protect the links and redirect
+  if(auth.uid) return <Redirect to = '/' /> 
+    
+    
+  
   // const [user, setUser] = useState([]);
 
   const handleSubmit = (e) => {
@@ -13,6 +24,7 @@ function SignIn(props) {
 
     if (email && password) {
       const users = { email, password };
+      console.log(users)
 
       // setUser((people) => {
       //   return [...people, users];
@@ -25,7 +37,7 @@ function SignIn(props) {
     setEmail("");
     setPassword("");
   };
-  const {authError} = props
+
 
   return (
     
@@ -66,7 +78,9 @@ function SignIn(props) {
 const mapStateToProps = (state) => {
 
   return{
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth: state.firebase.auth
+
   }
 }
 

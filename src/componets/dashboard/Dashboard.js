@@ -5,13 +5,18 @@ import { firestoreConnect} from  'react-redux-firebase'
 // connect is a function to take a higher order component 
 import {connect} from 'react-redux'
 import {compose} from 'redux'
+import {Redirect} from 'react-router-dom'
 
  class Dashboard extends Component {
    
   render() {
     // console.log(this.props)
-    const {projects} = this.props
+    const {projects, auth} = this.props
 
+    // Protect the links and redirect
+    if(!auth.uid) return <Redirect to = '/signin' /> 
+    
+    
     return (
       <div className="dashboard container">
         <div className="row">
@@ -31,10 +36,10 @@ import {compose} from 'redux'
 
 
 const mapStateToProps = state => {
-  console.log(state)
   
   return {
     projects: state.firestore.ordered.projects,
+    auth: state.firebase.auth
   }
 }
 // const mapStateToProps = (state) => {

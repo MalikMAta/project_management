@@ -31,7 +31,7 @@ firebase,
 //this is for creating user firebase profiles
 config:{}, 
 dispatch: store.dispatch,
-createFirestoreInstance
+createFirestoreInstance,
 }
 
 ReactDOM.render(
