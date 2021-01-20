@@ -11,7 +11,7 @@ function CreateProject(props) {
   const [content, setContent] = useState("");
  
 
-  const [newPost, setNewPost] = useState([])
+  // const [newPost, setNewPost] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,13 +19,15 @@ function CreateProject(props) {
     if(title && content ){
         const posts = {title, content}
         
-        setNewPost((post) =>{
-            return[...post, posts]
-        })
+        // setNewPost((post) =>{
+        //     return[...post, posts]
+        // })
+       
+        props.createProject(posts)
+        props.history.push('/')
         setTitle("")
         setContent("")
-        props.createProject(newPost)
-        setNewPost("")
+        // setNewPost("")
 
      }else{ 
         alert('error')

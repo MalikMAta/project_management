@@ -29,7 +29,8 @@ const rrfProps =  {
 // this is the firebase config
 firebase,
 //this is for creating user firebase profiles
-config:{}, 
+config:{userProfile: 'users', // where profiles are stored in database,
+useFirestoreForProfile: true}, 
 dispatch: store.dispatch,
 createFirestoreInstance,
 }

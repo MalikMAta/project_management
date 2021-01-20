@@ -5,9 +5,9 @@ const ProjectSummary = ({project}) => {
     <div>
       <div className="card z-depth-0 project-summary">
         <div className="card-content grey-text text-darken-3">
-          <span className="card-title">{project.id} {project.name}</span>
-          <p>Posted by malik</p>
-          <p className="grey-text">3.23.2020</p>
+          <span className="card-title">{project.title} </span>
+          <p>Poted by: {project.authorFirstName}</p>
+          <p className="grey-text">{project.createdAt.toDate().toDateString()}</p>
         </div>
       </div>
     </div>
