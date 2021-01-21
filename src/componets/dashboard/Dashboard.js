@@ -24,7 +24,7 @@ import {Redirect} from 'react-router-dom'
             {" "}
             <ProjectList projects={projects}/>
           </div>
-          <div className="12 s12 m5 offset-m1">
+          <div className="col 12 s12 m5 offset-m1">
             {" "}
             <Notifications />
           </div>
