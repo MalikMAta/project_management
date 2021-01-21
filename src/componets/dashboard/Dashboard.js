@@ -11,7 +11,7 @@ import {Redirect} from 'react-router-dom'
    
   render() {
     // console.log(this.props)
-    const {projects, auth} = this.props
+    const {projects, auth, notifications} = this.props
 
     // Protect the links and redirect
     if(!auth.uid) return <Redirect to = '/signin' /> 
@@ -26,7 +26,7 @@ import {Redirect} from 'react-router-dom'
           </div>
           <div className="col 12 s12 m5 offset-m1">
             {" "}
-            <Notifications />
+            <Notifications notifications={notifications}/>
           </div>
         </div>
       </div>
@@ -39,6 +39,7 @@ const mapStateToProps = state => {
   
   return {
     projects: state.firestore.ordered.projects,
+    notifications: state.firestore.ordered.notifications,
     auth: state.firebase.auth
   }
 }
@@ -53,6 +54,7 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     { collection: 'projects'},
+    {collection: 'notifications', limit: 3}
 
   ])
 )(Dashboard)
